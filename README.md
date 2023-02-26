@@ -1,7 +1,7 @@
 # Electron
 
 Startup:
-`npm run e:serve`
+`npm run serve`
 
 What happens behind the scenes:
 - React App is started as usual, on a port!
