@@ -1,41 +1,20 @@
-import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
+import { Navbar } from './components/Navbar';
+import { About } from './pages/About';
+import { Home } from './pages/Home';
 
 function App() {
-  const [count, setCount] = useState( window.main.count.default || 0 )
-
-  const handleTelefonierenNachHause = async () => {
-    console.log("Yayyy. From Renderer")
-    const pingResult = await window.main.ping()
-    console.log(pingResult)
-  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hello Electron + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-          <button onClick={handleTelefonierenNachHause}>Nach Hause telefonieren</button>
-          <button onClick={ () => window.main.dbUpdate({ username: "robbos" + count }) }>
-            Nach Hause Daten senden
-          </button>
-        </p>
-        <div>
-          Node Version: <span>{window.main.versions.node()}</span>
-        </div>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path="*" element={<div>Not found, buddy</div>} />
+        </Routes>
       </header>
     </div>
   );
