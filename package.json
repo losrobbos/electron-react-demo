@@ -1,0 +1,28 @@
+{
+  "name": "electron-demo",
+  "private": true,
+  "version": "0.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "concurrently -k 'cross-env BROWSER=none npm run dev' 'npm run e:start'",
+    "e:build": "",
+    "e:start": "wait-on tcp:3000 && electron ."
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron": "^23.1.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "wait-on": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.15"
+  }
+}
