@@ -14,5 +14,5 @@ What happens behind the scenes when we start the Electron App:
 - The main electron process provides functions that can access the system (e.g. filesystem) to the React app
 - These functions are shared in a preload script using a so called "Context Bridge"
 
-Now we can use the combined power of UI windows like in normal desktop apps and disk persistence for our sensitive data, without processing data in any cloud / backend.
+Now we can use the combined power of UI windows like in normal desktop apps and disk persistence for our user data, without processing data in any cloud / backend.
 
