@@ -6,7 +6,7 @@ Startup:
 What happens behind the scenes when we start the Electron App:
 
 - React App is started as usual, on a port (3000)
-- In parallel the electron script is launched (=> /electron/main.js)
+- In parallel electron is launched
 - The start script first waits until the React process is started up, using the wait-on package
 - The wait-on package checks until the app PORT is opened and ready to receive requests
 - Then Electron start the main.js file which "wraps around" the React process
